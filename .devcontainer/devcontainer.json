@@ -1,10 +1,13 @@
 {
-	"name": "Node.js & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces",
-  "build": {
-    "dockerfile": "Dockerfile"
+  "name": "Node.js & PostgreSQL",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+  "features": {
+    // "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+    //   "version": "latest",
+    //   "dockerDashComposeVersion": "v2"
+    // }
   },
   "customizations": {
     "vscode": {
@@ -33,12 +36,8 @@
     }
   },
   "remoteUser": "node",
-  "mounts": [
-    // "source=${localEnv:HOME}/.pnpm-store,target=/home/node/.pnpm-store,type=bind,consistency=cached",
-    "source=claude-code-bashhistory,target=/commandhistory,type=volume",
-    "source=claude-code-config,target=/home/node/.claude,type=volume",
-    "source=gh-config,target=/home/node/.config/gh,type=volume"
-  ],
+  // "mounts": [
+  // ],
   "remoteEnv": {
     "NODE_OPTIONS": "--max-old-space-size=4096",
     "CLAUDE_CONFIG_DIR": "/home/node/.claude",
