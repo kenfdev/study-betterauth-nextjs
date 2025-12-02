@@ -36,7 +36,8 @@ export const auth = betterAuth({
   },
 
   account: {
-    updateAccountOnSignIn: true,
+    // updateAccountOnSignIn: true,
+    updateAccountOnSignIn: false,
     storeStateStrategy: 'cookie',
     storeAccountCookie: true, // Store account data after OAuth flow in a cookie (useful for database-less flows)
   },
